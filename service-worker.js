@@ -1,4 +1,4 @@
-const CACHE='youtube-deposit-box-v2';
+const CACHE='youtube-deposit-box-v5';
 const APP_SHELL=['/','/index.html','/manifest.webmanifest','/assets/icons/favicon-32.png','/assets/icons/icon-192.png','/assets/icons/icon-512.png'];
 self.addEventListener('install',event=>{event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(APP_SHELL)));self.skipWaiting();});
 self.addEventListener('activate',event=>{event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k)))));self.clients.claim();});
