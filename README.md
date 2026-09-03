@@ -26,3 +26,7 @@ Local-first dashboard untuk mengelola dan memonitor channel YouTube.
 Buka **API Settings** di aplikasi, masukkan YouTube Data API v3 key, lalu gunakan **Sync** atau **Sync All**.
 
 > Data akun/password disimpan di browser pengguna. Jangan gunakan perangkat publik atau profil browser bersama.
+
+## Historical statistics
+
+Subscriber and view changes use dated local snapshots stored per channel in IndexedDB. Each calendar day keeps one snapshot; repeated Sync actions on the same day update that day's snapshot instead of changing the baseline. The dashboard supports **Daily**, **7 Days**, and **30 Days** comparison periods. Positive changes are green, negative changes are red, and zero/no-baseline changes are neutral.
