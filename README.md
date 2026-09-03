@@ -1,48 +1,28 @@
 # YouTube Deposit Box
 
-**Organize Channels in One Place**
-
-Local-first dashboard untuk menyimpan profil channel YouTube, melakukan sinkronisasi statistik publik melalui YouTube Data API v3, melakukan backup/restore JSON, dan memantau status channel.
+Local-first dashboard untuk mengelola dan memonitor channel YouTube.
 
 ## Fitur
 
-- IndexedDB sebagai penyimpanan utama lokal
-- YouTube Data API v3 sync per channel dan Sync All
-- Subscribers, Total Views, Views Change, Total Videos
-- Nama channel dan logo channel dari API setelah sync
-- Channel tags/keywords dari API jika tersedia
+- IndexedDB untuk data channel lokal
+- YouTube Data API v3 untuk nama channel, handle, logo, subscribers, views, total video, dan channel keywords
+- Subscriber Change dan View Change berdasarkan snapshot sync sebelumnya
 - Filter status dan monetisasi
-- Overview total Channels, Aktif, Hiatus, Monetized Channels
-- Backup dan Restore JSON
-- API key disimpan lokal di browser
-- Responsive layout
-- PWA installable + offline app shell
+- Backup/Restore JSON
+- PWA (manifest + service worker + icons)
+- Responsive mobile/desktop
 
 ## Deploy ke Vercel
 
 1. Upload seluruh isi repository ini ke GitHub.
 2. Import repository di Vercel.
-3. Framework Preset: **Other** / static site.
-4. Build command: kosong.
-5. Output directory: kosong / root project.
+3. Framework Preset: **Other**.
+4. Build Command: kosong.
+5. Output Directory: kosong.
 6. Deploy.
-
-## Menjalankan lokal
-
-Karena service worker memerlukan HTTP/HTTPS, jangan membuka `index.html` langsung dengan `file://` jika ingin menguji PWA.
-
-Contoh:
-
-```bash
-python -m http.server 8080
-```
-
-Lalu buka `http://localhost:8080`.
 
 ## YouTube API
 
-Masukkan API key dari Google Cloud Console melalui **API Settings**. Aktifkan **YouTube Data API v3** pada project Google Cloud Anda.
+Buka **API Settings** di aplikasi, masukkan YouTube Data API v3 key, lalu gunakan **Sync** atau **Sync All**.
 
-## Data dan privasi
-
-Data channel dan API key disimpan di browser pengguna. Backup JSON perlu dilakukan secara berkala jika data penting.
+> Data akun/password disimpan di browser pengguna. Jangan gunakan perangkat publik atau profil browser bersama.
